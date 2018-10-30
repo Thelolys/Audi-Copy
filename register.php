@@ -126,10 +126,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <ul class="navbar-nav mx-auto"  >
 
                 <li class="nav-item ">
-                    <a class="nav-link1 " href="./index.html" >Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link1 " href="./index1.php" >Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link1" href="./models.html">Models <span class="sr-only">(current)</span></a>
+                    <a class="nav-link1" href="./models.php">Models <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link1" href="./index.html">Sport <span class="sr-only">(current)</span></a>
@@ -171,5 +171,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
         </div>
     </div>
+</div>
 </body>
 </html>

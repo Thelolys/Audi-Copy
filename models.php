@@ -1,3 +1,7 @@
+<?php
+session_start(); // Right at the top of your script
+error_reporting( error_reporting() & ~E_NOTICE )
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +34,10 @@
                 <ul class="navbar-nav mx-auto"  >
 
                     <li class="nav-item ">
-                        <a class="nav-link1 " href="./index.html" >Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link1 " href="./index1.php" >Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link1" href="./models.html">Models <span class="sr-only">(current)</span></a>
+                        <a class="nav-link1" href="./models.php">Models <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link1" href="./index.html">Sport <span class="sr-only">(current)</span></a>
@@ -58,7 +62,7 @@
                         <a class="nav-link2" href="./A1.html" >A1 <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item1 ">
-                        <a class="nav-link2" href="./models.html">A3 <span class="sr-only">(current)</span></a>
+                        <a class="nav-link2" href="./models.php">A3 <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item1 ">
                         <a class="nav-link2" href="./index.html" >A4 <span class="sr-only">(current)</span></a>
@@ -87,10 +91,38 @@
                     <li class="nav-item1 ">
                         <a class="nav-link2" href="./index.html">E-TRON <span class="sr-only">(current)</span></a>
                     </li>
-
                 </ul>
-
             </div>
+
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item1 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                            <?php
+                            if($_SESSION["loggedin"] == true){
+                            echo htmlspecialchars($_SESSION["username"]);?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="logout.php" class="">Sign Out
+                            </a>
+                            <a href="mycars.php" class="">My cars
+                            </a>
+                            <a href="resetpassword.php" class="">Reset password
+                            </a>
+
+                        </div>
+                    </li>
+
+
+                    <?php }elseif($_SESSION["loggedin"] == false){
+
+                        ?>
+                        <a class="nav-link2" href="./login.php" >Login <span class="sr-only">(current)</span></a>
+                        <a class="nav-link2" href="./register.php">Sign up <span class="sr-only">(current)</span></a>
+                    <?php }; ?>
+
+
         </nav>
 
         <div class="main">
@@ -164,5 +196,6 @@
 
         </div>
     </div>
+
 </body>
 </html>

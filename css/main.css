@@ -55,6 +55,7 @@ html, body{
 
 }
 
+
 /*@media (min-width: 1000px) {*/
     /*.nav-link {*/
         /*font-size: 1.5vw;*/
@@ -501,6 +502,11 @@ article{
         background-color: black;
 
     }
+}
+
+.mainbox h3{
+    color: white;
+    padding-left: 20px;
 }
 
 
